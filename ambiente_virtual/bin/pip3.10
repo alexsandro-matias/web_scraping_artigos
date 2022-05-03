@@ -1,4 +1,4 @@
-#!/home/matias/github/web_scraping_artigos/ambiente_virtual/bin/python3
+#!/home/matias/github/web_scraping_artigos/ambiente_virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
