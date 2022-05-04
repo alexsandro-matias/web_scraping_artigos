@@ -4,6 +4,7 @@
 # print(pagina_html.read())#
 #
 #
+from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -33,8 +34,45 @@ from bs4 import BeautifulSoup
 
 
 # Com isso, agora é possível retornar todos os links contidos no site Globo.com.
-pagina_html = urlopen("http://www.globo.com.br")
+# pagina_html = urlopen("http://www.sempreupdate.com.br")
+# objeto_site = BeautifulSoup(pagina_html.read(), "html.parser")
+# for link in objeto_site.find_all('a'):
+#     print(link.get('href'))
+
+# # Para tratamento de erros causados em momento de requisição devem ser tratados pelo programa
+# pagina_html = urlopen("http://www.sempreupdate.com.br")
+# print(f'HTML - {pagina_html}')
+#
+# try:
+#     pagina_html = urlopen("http://www.udemy.com/erro")
+#     print(f'HTML - {pagina_html}')
+# except HTTPError as erro:
+#     print(erro)
+#
+# # Em vez de algum erro ser apresentando pelo servidor, o erro for na URL,
+# # existirá outra a classe URLError da biblioteca urllib
+#
+# try:
+#     pagina_html = urlopen("http://www.abracaadabra.com")
+#     print(f'HTML - {pagina_html}')
+# except URLError as erro:
+#     print(erro)
+
+
+
+# Erros também podem ser gerados na tag pesquisa no site. Caso isso aconteça,
+# o retorno será none. Mas, se dentro dessa tag for pesquisado um atributo inexistente,
+# será lançada uma exceção de atributo. -   print(objeto_site.h4.div)
+# AttributeError: 'NoneType' object has no attribute 'div'
+pagina_html = urlopen("http://www.sempreupdate.com.br")
 objeto_site = BeautifulSoup(pagina_html.read(), "html.parser")
-for link in objeto_site.find_all('a'):
-    print(link.get('href'))
+print(objeto_site.h4)
+
+# Colocando dentro de uma exceção:
+try:
+    print(objeto_site.h4.div)
+except AttributeError as erro:
+    print("Erro no atributo")
+
+
 
