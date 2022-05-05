@@ -1,78 +1,50 @@
-# programa que busca as informações em html dos sites
-# import requests
-# pagina_html = urlopen("https://sempreupdate.com.br")
-# print(pagina_html.read())#
+# #
+# # def buscar_dados():
+# #     request = requests.get("http://localhost:3002/api/todo")
+# #     print(request.content)
 #
 #
-from urllib.error import HTTPError, URLError
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-
-# pagina_html = urlopen("http://localhost:8000/teste2.html")
-# objeto_site = BeautifulSoup(pagina_html.read(), "html.parser")
-
+# from googlesearch import search
+# # palavra = "paulo freire"
+# #
+# # link = "https://serpapi.com/playground?engine=google_scholar&q=Coffee&hl=en"
+# # params = {
+# #   "engine": "google_scholar",
+# #   "q": "biology",
+# #   "api_key": "secret_api_key"
+# # }
+# #
+# # search = googlesearch(params)
+# # results = search.get_dict()
+# # organic_results = results['organic_results']
 #
-# print(objeto_site.h1)
-# print(objeto_site.html.h1)
-# print(objeto_site.title)
-
-# Neste primeiro caso, apenas retorna o valor da primeira ocorrência do H1.
-# Para encontrar todas as ocorrências, existe outro método.
-
-
-# print(objeto_site.find_all("h2"))
-
-
-# para listar os links contidos no site:
-# for link in objeto_site.find_all('a'):
-#     print(link)
-
-# Porém essa abordagem não é interessante, uma vez que traz os valores com as tags.
-# Para isso, usaremos método get para retornarmos apenas o links pelo href.
-# for link in objeto_site.find_all('a'):
-#     print(link.get('href'))
-
-
-# Com isso, agora é possível retornar todos os links contidos no site Globo.com.
-# pagina_html = urlopen("http://www.sempreupdate.com.br")
-# objeto_site = BeautifulSoup(pagina_html.read(), "html.parser")
-# for link in objeto_site.find_all('a'):
-#     print(link.get('href'))
-
-# # Para tratamento de erros causados em momento de requisição devem ser tratados pelo programa
-# pagina_html = urlopen("http://www.sempreupdate.com.br")
-# print(f'HTML - {pagina_html}')
 #
-# try:
-#     pagina_html = urlopen("http://www.udemy.com/erro")
-#     print(f'HTML - {pagina_html}')
-# except HTTPError as erro:
-#     print(erro)
+# # from googlesearch import searc earch
+# # response = GoogleSearch().search("something")
+# # for result in response.results:
+# #     print("Title: " + result.title)
+# #     print("Content: " + result.getText())
 #
-# # Em vez de algum erro ser apresentando pelo servidor, o erro for na URL,
-# # existirá outra a classe URLError da biblioteca urllib
 #
-# try:
-#     pagina_html = urlopen("http://www.abracaadabra.com")
-#     print(f'HTML - {pagina_html}')
-# except URLError as erro:
-#     print(erro)
-
-
-
-# Erros também podem ser gerados na tag pesquisa no site. Caso isso aconteça,
-# o retorno será none. Mas, se dentro dessa tag for pesquisado um atributo inexistente,
-# será lançada uma exceção de atributo. -   print(objeto_site.h4.div)
-# AttributeError: 'NoneType' object has no attribute 'div'
-pagina_html = urlopen("http://www.sempreupdate.com.br")
-objeto_site = BeautifulSoup(pagina_html.read(), "html.parser")
-print(objeto_site.h4)
-
-# Colocando dentro de uma exceção:
-try:
-    print(objeto_site.h4.div)
-except AttributeError as erro:
-    print("Erro no atributo")
-
-
-
+# # from serpapi import GoogleScholarSearch
+# # search = GoogleScholarSearch({"q": "Paulo Freire"})
+# # data = search.get_dict()
+# #
+# # print(data.keys())
+# # # print(data['organic_results'])
+# # # print(data['google_scholar_url'])
+# # # print(type(data))
+#
+#
+# from serpapi import GoogleSearch
+#
+# params = {
+#   "engine": "google_scholar",
+#   "q": "biology",
+#   "api_key": "5c05efbb0a28107ba991cb5ad8c70d8eeca490f4b8f30043f09c4a3f507942da"
+# }
+#
+# search = GoogleSearch(params)
+# results = search.get_dict()
+# print(results)
+# # organic_results = results['organic_results']
