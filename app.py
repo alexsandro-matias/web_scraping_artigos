@@ -77,11 +77,11 @@ import requests
 
 
 
-# # Testando o site da Scielo.org
-# from urllib.request import urlopen
-# from bs4 import BeautifulSoup
-# pagina_html = urlopen("https://search.scielo.org/")
-# objeto_site = BeautifulSoup(pagina_html, "html.parser")
-# print(objeto_site.form)
-# # print(objeto_site.find_all(form))
-#
+# Testando o site da Scielo.org
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+pagina_html = urlopen("https://search.scielo.org/")
+objeto_site = BeautifulSoup(pagina_html, "html.parser")
+print(objeto_site.form)
+# print(objeto_site.find_all(form))
+
